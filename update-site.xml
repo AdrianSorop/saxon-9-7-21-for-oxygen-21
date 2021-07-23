@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xt:extensions xmlns:xt="http://www.oxygenxml.com/ns/extension"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.oxygenxml.com/ns/extension http://www.oxygenxml.com/ns/extension/extensions.xsd">
+    <xt:extension xmlns:xt="http://www.oxygenxml.com/ns/extension" id="com.oxygenxml.sdksamples.transformer.Saxon9TransformerPlugin">
+        <xt:location href="build/oxygen-sample-plugin-tranformer-saxon-9-7-21.0.zip"/>
+        <xt:version>1.0.0</xt:version>
+        <xt:oxy_version>21.0</xt:oxy_version>
+        <xt:type>plugin</xt:type>
+        <xt:author>Syncro Soft</xt:author>
+        <xt:name>Saxon 9.7 XSLT and XQuery Transformer</xt:name>
+        <xt:description><html xmlns="http://www.w3.org/1999/xhtml">
+            <head>
+                <title>Sample External Saxon 9.7 Transformer plugin</title>
+            </head>
+            <body>
+                <div>
+                    <p>This plugin installs an external <a href="http://saxonica.com/products/latest.xml#saxon9-7">Saxon 9.7 XSLT &amp; XQuery processor</a> into &lt;oXygen/&gt;. You will be able to validate and transform XSLT/XQuery with Saxon 9.7. </p>
+                    <p style="color:red">Note: Debugging XSLT/XQuery transformations based on this engine is <b>NOT</b> supported. </p>
+                    <div>
+                        <h4>XSLT Validation</h4>
+                        <p>After installing the plugin, there are two possiblities to use Saxon 9.7 for validating XSLT:</p>
+                        <ol>
+                            <li>To set Saxon 9.7 as the default XSLT validation engine, go to <a href="http://www.oxygenxml.com/doc/ug-oxygen/index.html?q=/doc/ug-oxygen/tasks/preferences-xslt.html">XSLT Preferences</a> and select <b>Saxon-EE 9.7.0.21 (External)</b> as the validation engine..</li>
+                            <li>If you preffer to use Saxon 9.7 just for some specific stylesheets, then you should create either a <a href="http://www.oxygenxml.com/doc/ug-oxygen/index.html?q=/doc/ug-oxygen/tasks/create-validation-xslt.html">Validation Scenario</a> or a <a href="http://www.oxygenxml.com/doc/ug-oxygen/index.html?q=/doc/ug-oxygen/tasks/xslt-transformation.html">Transformation Scenario</a> that uses <b>Saxon-EE 9.7.0.21 (External)</b> as the engine and associate it with whichever stylesheet you like.</li>
+                        </ol>
+                        <h4>XSLT Transformation</h4>
+                        <p>Create a <a href="http://www.oxygenxml.com/doc/ug-oxygen/index.html?q=/doc/ug-oxygen/tasks/xslt-transformation.html">Transformation Scenario</a> that uses Saxon-EE 9.7.0.21 (External) as the engine and associate it with the stylesheet.</p>
+                        <h4>XSLT Compile</h4>
+                        <p>Saxon 9.7 allows one to <a href="http://www.saxonica.com/html/documentation/using-xsl/compiling.html">export the compiled form</a> of a stylesheet as an XML file. The plugin also contributes an action on the toolbar that will compile and export an XSLT.</p>
+                    </div>
+                </div>
+                <div>
+                    <h4>XQuery Validation</h4>
+                    <p>After installing the plugin, there are two possiblities to use Saxon 9.7 for validating XQuery:</p>
+                    <ol>
+                        <li>To set Saxon 9.7 as the default XQuery validation engine, go to <a href="http://www.oxygenxml.com/doc/ug-oxygen/index.html?q=/doc/ug-oxygen/tasks/preferences-xquery.html">XQuery Preferences</a> and select <b>Saxon-EE XQuery 9.7.0.21 (External)</b> as the validation engine..</li>
+                        <li>If you preffer to use Saxon 9.7 just for some specific stylesheets, then you should create either a <a href="http://www.oxygenxml.com/doc/ug-oxygen/index.html?q=/doc/ug-oxygen/tasks/create-validation-xslt.html">Validation Scenario</a> or a <a href="http://www.oxygenxml.com/doc/ug-oxygen/index.html?q=/doc/ug-oxygen/tasks/xslt-transformation.html">Transformation Scenario</a> that uses <b>Saxon-EE XQuery 9.7.0.21 (External)</b> as the engine and associate it with whichever stylesheet you like.</li>
+                    </ol>
+                    <h4>XQuery Transformation</h4>
+                    <p>Create a <a href="http://www.oxygenxml.com/doc/ug-oxygen/index.html?q=/doc/ug-oxygen/tasks/xslt-transformation.html">Transformation Scenario</a> that uses <b>Saxon-EE XQuery 9.7.0.21 (External)</b> as the engine and associate it with the XQuery file.</p>
+                </div>
+                <div>
+                    <h4> Performing Transformations with Data Extracted from a Database </h4>
+                    <p> This plugin will allow you to perform transformations with data extracted from a
+                        database, but there are a few changes you will have to make to use this: </p>
+                    <ol>
+                        <li>Add a copy of the database connector that is compatible with your database in
+                            <b>[OXYGEN_INSTALL_DIR]/lib/</b> or in <b>[PLUGIN_INSTALL_LOCATION]/lib/</b> (you can
+                            go to <b>Options->Preferences->Plugins</b> to see where the plugin is installed).</li>
+                        <li>Restart the application.</li>
+                        <li>
+                            <p>Run the transformation scenario.</p>
+                            <p>If this does not work, try the following:</p>
+                            <ol>
+                                <li>Create a transformation scenario (see sections above) and click the
+                                    <b>Extensions</b> button.</li>
+                                <li>Added the database connector that is compatible with your database.</li>
+                                <li>Add <b>saxon9-sql.jar</b> that is located in <b>[OXYGEN_INSTALL_DIR]/lib/</b> or
+                                    <b>[PLUGIN_INSTALL_LOCATION]/lib/</b> (you can go to
+                                    <b>Options->Preferences->Plugins</b> to see where the plugin is installed).</li>
+                                <li>Run the transformation scenario.</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </div>  
+            </body>
+        </html>
+        </xt:description>
+        <xt:license><![CDATA[(c) Syncro Soft , All rights reserved.
+This Plug-In is part of the Oxygen XML Software and, as such, is part of the License Agreement governing the Oxygen XML Software.
+]]></xt:license>
+    </xt:extension>
+    
+</xt:extensions>
